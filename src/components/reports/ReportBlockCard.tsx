@@ -217,14 +217,14 @@ export const ReportBlockCard = memo(function ReportBlockCard({
 
       <div className="flex-1 px-4 pb-3">
         <InsightPanels insight={insight} filters={view} height={height} />
-        {/* Same position as on a section card, and opened against the block's own slice. */}
-        <div className="mt-3 flex justify-end">
-          <GenerateInsightsButton insight={insight} filters={view} />
-        </div>
       </div>
 
-      <footer className="px-4 pb-4">
-        <InsightDisclosures insight={insight} {...(note !== undefined ? { note } : {})} />
+      {/* The same footer line as a section card, opened against the block's own slice. */}
+      <footer className="flex items-end justify-between gap-4 px-4 pb-4">
+        <div className="min-w-0 flex-1">
+          <InsightDisclosures insight={insight} {...(note !== undefined ? { note } : {})} />
+        </div>
+        <GenerateInsightsButton insight={insight} filters={view} />
       </footer>
     </article>
   );

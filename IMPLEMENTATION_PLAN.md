@@ -205,7 +205,18 @@ moved.
 
 The position matters more than the styling: a reader decides they want a reading *after*
 looking at the marks, not before, so the control belongs under the chart rather than in the
-header beside the id.
+header beside the id. It then moved once more, to share the **footer line** with the
+disclosure links rather than sit in a row of its own above them — the owner's call, and the
+better one for a second reason: that row is identical on every card whatever the chart above
+it is, so the control lands in one place across all 163 instead of floating up and down with
+the panel height. Measured on G-03: the button's baseline and the last disclosure link's are
+the same pixel.
+
+**The button says Beta, and so does the panel.** The reading is generated, and someone who
+takes an action from it should know that before they read it. The tag sits *inside* the
+control so it cannot be separated from what it qualifies and travels to every place the
+button appears; the panel repeats it beside its own heading, because a reader arriving at an
+open panel may never have looked at the button.
 
 **The panel was anchored to the wrong number, and the close button paid for it.** It took
 its top from `--header-h`, which describes the top bar alone. On the layer pages a section
@@ -1700,7 +1711,7 @@ both anchors · the branch filter reaches the as-of strip · the catalogue state
 - [x] `GeneratedInsight` / `Finding` / `Action` types, with the word caps stated in the doc comment — `data/generatedInsight.ts`
 - [x] `local` provider — a `ChartData` visitor, 15 cases, deterministic, filter-aware, built on the same `panelsFor` call the card drew; `figures.ts` extracted so it and `finding.ts` share one arithmetic
 - [x] `live` provider behind `VITE_INSIGHTS_PROVIDER`, with an 8s timeout, response validation against the same caps, and fallback to `local` that states itself in one line
-- [x] `GenerateInsightsButton` — a filled `accent` CTA at the bottom-right of the chart, on section cards, report blocks and the detail page; 36px tall at the `card` radius, which is the brand's own button ratio (§2.29)
+- [x] `GenerateInsightsButton` — a filled `accent` CTA carrying a **Beta** tag, on the card's footer line beside the disclosures, on section cards, report blocks and the detail page; 36px tall at the `card` radius, which is the brand's own button ratio (§2.29)
 - [x] Non-modal side panel — no scrim, page shifts rather than being covered, chart stays interactive; bottom-docked below 1280px; anchored to the **measured** bottom of the sticky chrome rather than to `--header-h`, so it clears the section tab bar and the banner in every scroll state (§2.29)
 - [x] Determinate progress bar with named stages; holds at 90% under `live` until the response lands; reduced-motion variant steps rather than glides
 - [x] Panel body — four beats, `Badge` tones for verdict, Escape closes, focus never leaves the opener, no focus trap

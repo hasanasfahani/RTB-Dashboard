@@ -109,6 +109,9 @@ export function InsightsPanel() {
           <div className="flex min-w-0 items-center gap-2">
             <IdChip id={target.insight.id} />
             <span className="text-label text-muted">Insights</span>
+            {/* Repeated here because this is where the reading is consumed, and a reader
+                arriving from a link may never have seen the button. */}
+            <Badge tone="neutral">Beta</Badge>
           </div>
           {/*
             * Always visible, because the panel header never scrolls — it sits outside the

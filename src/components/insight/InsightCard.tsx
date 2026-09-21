@@ -100,15 +100,23 @@ export const InsightCard = memo(function InsightCard({
 
       <div className="flex-1 px-4 pb-3">
         <InsightPanels insight={insight} filters={filters} height={chartHeight} />
-        {/* The call to action sits at the bottom-right of the chart it reads, not in the
-            header — a reader decides they want the reading after looking at the marks. */}
-        <div className="mt-3 flex justify-end">
-          <GenerateInsightsButton insight={insight} />
-        </div>
       </div>
 
-      <footer className="px-4 pb-4">
-        <InsightDisclosures insight={insight} />
+      {/*
+        * The call to action shares the footer line with the disclosures rather than sitting
+        * in a row of its own above them.
+        *
+        * Two reasons beyond the tidier baseline. It is the last thing on the card, which is
+        * where a reader arrives having already looked at the marks — the order the decision
+        * is actually made in. And the row it now sits on is the same on every card, whatever
+        * the chart above it is, so the control lands in one place across all 163 instead of
+        * floating up and down with the panel height.
+        */}
+      <footer className="flex items-end justify-between gap-4 px-4 pb-4">
+        <div className="min-w-0 flex-1">
+          <InsightDisclosures insight={insight} />
+        </div>
+        <GenerateInsightsButton insight={insight} />
       </footer>
     </article>
   );

@@ -15,6 +15,10 @@ import { useInsightsControls } from '../../state/InsightsPanelContext.tsx';
  * why it was specified as "the fill under a button label". It looks like the reference and
  * can be read at arm's length from the back of a boardroom.
  *
+ * **It says Beta.** The reading is generated, and a reader who takes an action from it
+ * should know that before they read it rather than after. The panel repeats it beside its
+ * own heading, which is where the output is actually consumed.
+ *
  * **The radius is `card`, and that is not a contradiction of §2.25.** That section rejected
  * a flat 16px because our controls were 19–23px tall, where it comes out at 0.70–0.85 of
  * the height — a pill, which reads consumer. This control is ~35px, where the same 16px is
@@ -46,6 +50,15 @@ export function GenerateInsightsButton({
     >
       <Sparkles size={14} strokeWidth={2.5} aria-hidden />
       {isOpen ? 'Insights open' : 'Generate Insights'}
+      {/*
+        * Inside the control rather than beside it, so the qualifier cannot be separated
+        * from the thing it qualifies — and it travels to every place the button appears
+        * without each of them having to remember. Translucent white reads on both the
+        * accent and the navy state without introducing a colour.
+        */}
+      <span className="rounded-chip bg-surface/25 px-1 py-px text-micro font-bold uppercase tracking-wider">
+        Beta
+      </span>
     </button>
   );
 }
