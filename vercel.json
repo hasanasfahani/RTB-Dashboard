@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "comment": "Single-page app. Routes like /retail/deposits-liabilities, /insight/R-17 and /reports/:id exist only in React Router, so a direct load or a refresh of one has no file to serve and would 404. Static files are matched first, so the bundle and the fonts are unaffected.",
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
