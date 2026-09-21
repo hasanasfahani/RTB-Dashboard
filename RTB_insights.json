@@ -1,0 +1,3558 @@
+{
+ "generatedFrom": "RTB_Core_Banking_BI_Insights_Catalogue.xlsx",
+ "count": 163,
+ "insights": [
+  {
+   "id": "E-01",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Balance Sheet",
+   "group": "Balance Sheet",
+   "title": "Total assets, gross loans, customer deposits & growth",
+   "whatItTells": "The size and shape of the bank at a glance.",
+   "method": "Month-end GL balances: total assets, gross customer loans, customer deposits; MoM/YoY growth for each. Source: GL trial balance mapped to reporting lines.",
+   "vizLabel": "KPI cards + sparklines",
+   "panels": [
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "E-02",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Profitability Ratios",
+   "group": "Profitability Ratios",
+   "title": "Net interest margin (NIM) & cost-to-income ratio (CIR)",
+   "whatItTells": "The two efficiency ratios every board watches.",
+   "method": "NIM = (interest income − interest expense) / average interest-earning assets, annualized. CIR = operating expenses / total operating income. Both from management P&L; compare vs budget and peers.",
+   "vizLabel": "Gauges vs target",
+   "panels": [
+    {
+     "component": "GaugeChart",
+     "variant": "target"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "E-03",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Profitability Ratios",
+   "group": "Profitability Ratios",
+   "title": "ROE & ROA vs budget",
+   "whatItTells": "Return on shareholder capital and on the balance sheet.",
+   "method": "ROE = annualized net profit / average equity; ROA = annualized net profit / average total assets. Average = (opening + closing)/2 or 13-point monthly average. Source: P&L + balance sheet GL.",
+   "vizLabel": "Bullet charts vs budget",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "E-04",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Liquidity",
+   "group": "Liquidity",
+   "title": "LCR, NSFR & loan-to-deposit ratio",
+   "whatItTells": "Regulatory liquidity resilience.",
+   "method": "LCR = high-quality liquid assets / net cash outflows over 30-day stress (from regulatory reporting engine). NSFR = available stable funding / required stable funding. LDR = net customer loans / customer deposits. Gauges against the 100% regulatory floor and internal buffers. Source: regulatory reporting / ALM system.",
+   "vizLabel": "Gauges with regulatory floor lines",
+   "panels": [
+    {
+     "component": "GaugeChart",
+     "variant": "regulatoryFloor"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "E-05",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Capital",
+   "group": "Capital",
+   "title": "Capital adequacy ratio (CAR)",
+   "whatItTells": "Solvency headroom above the regulatory minimum.",
+   "method": "CAR = eligible capital (CET1 + AT1 + Tier 2) / risk-weighted assets; show CET1 separately; track vs minimum requirement + capital conservation buffer. Source: regulatory capital reporting.",
+   "vizLabel": "Gauge + trend",
+   "panels": [
+    {
+     "component": "GaugeChart",
+     "variant": "target"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "E-06",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Business Mix",
+   "group": "Business Mix",
+   "title": "Retail vs Corporate vs Treasury revenue & asset split",
+   "whatItTells": "Where the bank makes its money and holds its risk.",
+   "method": "Divisional revenue (NII + fees) and divisional assets per management accounts allocation; share donut for current month + stacked bar trend over 12 months. Source: divisional P&L / management accounting.",
+   "vizLabel": "Donut + stacked bar trend",
+   "panels": [
+    {
+     "component": "DonutChart",
+     "variant": "plain"
+    },
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "E-07",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Credit Quality",
+   "group": "Credit Quality",
+   "title": "Group NPL ratio & coverage",
+   "whatItTells": "Bank-wide credit quality headline.",
+   "method": "Group NPL ratio = total Stage 3 / non-performing exposure / gross customer loans. Coverage = total ECL provisions / NPL stock. Split retail vs corporate. Source: ECL engine + GL.",
+   "vizLabel": "KPI + trend",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "E-08",
+   "layer": "executive",
+   "layerLabel": "Executive 360°",
+   "domain": "Planning",
+   "group": "Planning",
+   "title": "Budget vs actual P&L variance",
+   "whatItTells": "Execution against the financial plan.",
+   "method": "YTD actual per P&L line (NII, fee income, opex, provisions, net profit) vs budget; variance % = (actual − budget)/budget; waterfall decomposing the net-profit variance into its drivers. Source: management accounts + budget file.",
+   "vizLabel": "Waterfall / variance bars",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    },
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "G-01",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Total operating income & growth",
+   "whatItTells": "The bank's total revenue engine.",
+   "method": "Total operating income = net interest income + non-interest income, from the management P&L (GL income statement lines). MoM/YoY growth and YTD vs budget. Source: GL trial balance mapped to P&L lines.",
+   "vizLabel": "Line chart + KPI",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "G-02",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Net interest income (NII) & margin trend",
+   "whatItTells": "Core intermediation earnings and the spread driving them.",
+   "method": "NII = interest & similar income − interest & similar expense (GL). NIM = annualized NII / average interest-earning assets. Decompose NII change into volume effect (Δ balances × prior rate) and rate effect (Δ rate × current balances). Source: GL + average balances + FTP.",
+   "vizLabel": "Combo: bars (NII) + line (NIM)",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "G-03",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Non-interest income breakdown & share",
+   "whatItTells": "Revenue diversification beyond lending spreads.",
+   "method": "Group GL non-interest lines: net fees & commissions, FX/trading income, investment income, other income. Fee share = non-interest income / total operating income; trend by component. Source: GL income accounts.",
+   "vizLabel": "Stacked bar + donut",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "DonutChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-04",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Cost of funds & interest expense trend",
+   "whatItTells": "What the bank pays for its money and how fast it's repricing.",
+   "method": "Cost of funds = annualized interest expense / average interest-bearing liabilities; split by deposits (retail/corporate), interbank, debt issued; spread vs policy rate. Source: GL interest expense + average balances.",
+   "vizLabel": "Dual-axis line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "dualAxisLines"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-05",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Operating expenses & cost-to-income ratio",
+   "whatItTells": "Cost discipline of the whole institution.",
+   "method": "Opex = staff + premises + IT + other (GL cost lines). CIR = opex / operating income; trend and vs budget; cost growth vs income growth ('jaws ratio'). Source: GL cost centres.",
+   "vizLabel": "Combo: bars (cost) + line (CIR)",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-06",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Provision charge & cost of risk",
+   "whatItTells": "How much credit losses eat into earnings.",
+   "method": "Cost of risk (bps) = annualized impairment charge (IFRS 9 P&L) / average gross loans. Trend quarterly; split retail vs corporate. Source: ECL engine + GL impairment lines.",
+   "vizLabel": "Line chart",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-07",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Net profit, ROE & ROA (trend & vs plan)",
+   "whatItTells": "Bottom-line delivery to shareholders.",
+   "method": "Net profit from P&L; ROE = annualized net profit / average equity; ROA = / average total assets; bullet vs budget and vs prior year. Source: management accounts.",
+   "vizLabel": "Bullet charts + trend",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-08",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Financial Performance",
+   "group": "Financial Performance",
+   "title": "Profitability by product line (whole bank)",
+   "whatItTells": "Which products fund the institution across both divisions.",
+   "method": "Product-level contribution across retail AND corporate books: income − FTP cost − allocated opex − provisions, aggregated by product family. Source: profitability engine.",
+   "vizLabel": "Treemap + waterfall",
+   "panels": [
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    },
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-09",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Balance Sheet Structure",
+   "group": "Balance Sheet Structure",
+   "title": "Asset composition & deployment",
+   "whatItTells": "Where the balance sheet is invested.",
+   "method": "Month-end GL: customer loans (net), investment securities, interbank placements, cash & central bank, other assets; each as % of total assets; trend. Source: GL balance sheet mapping.",
+   "vizLabel": "Stacked area (12 months)",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "G-10",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Balance Sheet Structure",
+   "group": "Balance Sheet Structure",
+   "title": "Liability & funding composition",
+   "whatItTells": "How the bank funds itself.",
+   "method": "Month-end: customer deposits (retail/corporate), interbank borrowings, debt securities issued, other liabilities, equity; % of total; trend. Source: GL balance sheet mapping.",
+   "vizLabel": "Stacked area / treemap",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    },
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-11",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Balance Sheet Structure",
+   "group": "Balance Sheet Structure",
+   "title": "Loan-to-deposit ratio (LDR) trend",
+   "whatItTells": "Balance between lending ambition and deposit funding.",
+   "method": "LDR = net customer loans / customer deposits; trend vs internal appetite band (e.g. 80–95%); split by division. Source: GL.",
+   "vizLabel": "Line with appetite band",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "appetiteBand"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "G-12",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Balance Sheet Structure",
+   "group": "Balance Sheet Structure",
+   "title": "Balance sheet growth & YoY bridge",
+   "whatItTells": "What drove the change in total assets.",
+   "method": "YoY movement in total assets decomposed into: loans growth, investments growth, interbank, other. Waterfall from opening to closing total assets. Source: GL snapshots.",
+   "vizLabel": "Waterfall",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-13",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Balance Sheet Structure",
+   "group": "Balance Sheet Structure",
+   "title": "Total off-balance-sheet exposure",
+   "whatItTells": "Contingent commitments beyond the balance sheet.",
+   "method": "Undrawn commitments + guarantees + LCs + acceptances, retail and corporate combined; as % of total assets; trend. Source: contingent liability GL + facility/trade modules.",
+   "vizLabel": "KPI + stacked bar",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-14",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Treasury, ALM & Market Risk",
+   "group": "Treasury, Alm & Market Risk",
+   "title": "Investment portfolio composition & accounting classification",
+   "whatItTells": "Size and risk profile of the securities book.",
+   "method": "Securities by type (sovereign, corporate, other) and by classification (amortized cost / FVOCI / FVTPL); unrealized gains/losses on FVOCI book. Source: treasury system + GL.",
+   "vizLabel": "Stacked bar + KPI",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "G-15",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Treasury, ALM & Market Risk",
+   "group": "Treasury, Alm & Market Risk",
+   "title": "Repricing gap (rate-sensitive assets vs liabilities)",
+   "whatItTells": "Earnings exposure to interest-rate moves.",
+   "method": "Bucket all rate-sensitive assets and liabilities by repricing date (<3M, 3–6M, 6–12M, 1–5Y, >5Y); gap per bucket = RSA − RSL; cumulative gap / total assets. Source: repricing schedules from ALM extract.",
+   "vizLabel": "Bar chart by bucket",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "ladder"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-16",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Treasury, ALM & Market Risk",
+   "group": "Treasury, Alm & Market Risk",
+   "title": "NII sensitivity to rate shocks",
+   "whatItTells": "What ±100/200bps does to next year's earnings.",
+   "method": "Re-price gapped balances under parallel rate shocks: ΔNII = Σ(bucket gap × shock × time weight). Run ±100bps and ±200bps scenarios; express as % of budget NII. Source: ALM model on repricing data.",
+   "vizLabel": "Scenario bar chart",
+   "panels": [
+    {
+     "component": "ScenarioBars",
+     "variant": "scenarios"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-17",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Treasury, ALM & Market Risk",
+   "group": "Treasury, Alm & Market Risk",
+   "title": "Balance sheet currency composition & net open FX position",
+   "whatItTells": "Structural currency risk.",
+   "method": "Assets and liabilities by currency; net open position per currency = FX assets − FX liabilities ± off-BS; total NOP vs regulatory limit (% of capital). Source: GL currency dimension + treasury.",
+   "vizLabel": "Stacked bar + limit line",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "G-18",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Treasury, ALM & Market Risk",
+   "group": "Treasury, Alm & Market Risk",
+   "title": "Duration / maturity mismatch of the book",
+   "whatItTells": "Long-term rate risk in the balance sheet.",
+   "method": "Average residual maturity/duration of assets vs liabilities; maturity ladder of the whole balance sheet; gap beyond 1Y. Source: ALM maturity schedule.",
+   "vizLabel": "Stacked bar ladder",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "ladder"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-19",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Treasury, ALM & Market Risk",
+   "group": "Treasury, Alm & Market Risk",
+   "title": "Interbank market activity & reliance",
+   "whatItTells": "Wholesale money-market footprint.",
+   "method": "Placements with / borrowings from banks: balances, average maturity, counterparty concentration; net interbank position trend. Source: treasury deals + GL.",
+   "vizLabel": "Dual-axis line + Pareto (counterparties)",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "dualAxisLines"
+    },
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-20",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Treasury, ALM & Market Risk",
+   "group": "Treasury, Alm & Market Risk",
+   "title": "Trading & FX income",
+   "whatItTells": "Markets business contribution.",
+   "method": "Trading income = realized + unrealized gains on FVTPL + FX revaluation + FX customer spreads (GL/treasury); split flow (customer-driven) vs position-taking; trend. Source: treasury + GL.",
+   "vizLabel": "Stacked bar",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-21",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Liquidity & Funding",
+   "group": "Liquidity & Funding",
+   "title": "LCR & NSFR (regulatory liquidity)",
+   "whatItTells": "Survival under stress and structural funding stability.",
+   "method": "LCR = HQLA / net cash outflows over 30-day stress scenario; NSFR = available stable funding / required stable funding — both from the regulatory reporting engine on core banking flows. Gauges vs 100% floor and internal buffer. Source: ALM/regulatory engine.",
+   "vizLabel": "Gauges with floor lines",
+   "panels": [
+    {
+     "component": "GaugeChart",
+     "variant": "regulatoryFloor"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-22",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Liquidity & Funding",
+   "group": "Liquidity & Funding",
+   "title": "HQLA buffer composition & level",
+   "whatItTells": "Quality and size of the liquidity cushion.",
+   "method": "HQLA = cash + central bank reserves + Level 1/Level 2 eligible securities (net of haircuts); composition donut and absolute buffer vs 30-day outflows. Source: treasury + regulatory engine.",
+   "vizLabel": "Donut + KPI",
+   "panels": [
+    {
+     "component": "DonutChart",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-23",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Liquidity & Funding",
+   "group": "Liquidity & Funding",
+   "title": "Funding concentration (top depositors, whole bank)",
+   "whatItTells": "Bank-wide dependence on large funding providers.",
+   "method": "Top-10/20 depositors (retail + corporate combined, aggregated at group level) as % of total customer deposits; monthly trend with threshold alerts. Source: customer-level aggregated balances.",
+   "vizLabel": "Pareto chart",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "G-24",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Liquidity & Funding",
+   "group": "Liquidity & Funding",
+   "title": "Wholesale funding reliance & maturity profile",
+   "whatItTells": "Exposure to market-sensitive funding.",
+   "method": "Wholesale funding = interbank + debt issued + large corporate deposits above threshold; wholesale ratio = wholesale / total funding; maturity ladder of wholesale instruments. Source: GL + treasury.",
+   "vizLabel": "Stacked bar ladder",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "ladder"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-25",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Liquidity & Funding",
+   "group": "Liquidity & Funding",
+   "title": "Deposit beta / rate pass-through",
+   "whatItTells": "How much of a rate hike reaches deposit pricing.",
+   "method": "Beta = Δ average deposit rate / Δ policy rate over a tightening or easing cycle, per product; used for ALM and pricing strategy. Source: deposit rate history + policy rate series.",
+   "vizLabel": "Scatter (Δpolicy vs Δdeposit rate)",
+   "panels": [
+    {
+     "component": "ScatterPlot",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-26",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Liquidity & Funding",
+   "group": "Liquidity & Funding",
+   "title": "Liquidity early-warning dashboard",
+   "whatItTells": "Leading indicators before a liquidity squeeze.",
+   "method": "Composite of daily signals: large outflows, LDR drift, interbank rate paid vs market, deposit renewal rate, cash/ATM demand spikes. RAG status per indicator. Source: daily core banking extracts + treasury.",
+   "vizLabel": "Traffic-light KPI panel",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "rag"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-27",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Capital",
+   "group": "Capital",
+   "title": "CAR, CET1 & buffer headroom",
+   "whatItTells": "Solvency and room to grow.",
+   "method": "CAR = eligible capital / RWA; CET1 ratio separately; headroom = current CAR − (regulatory minimum + buffers); trend. Source: regulatory capital reporting.",
+   "vizLabel": "Gauge + trend",
+   "panels": [
+    {
+     "component": "GaugeChart",
+     "variant": "target"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-28",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Capital",
+   "group": "Capital",
+   "title": "RWA breakdown by risk type & division",
+   "whatItTells": "What consumes the capital.",
+   "method": "RWA split: credit (retail / corporate / sovereign), market, operational; density = RWA / exposure per portfolio. Source: regulatory engine.",
+   "vizLabel": "Stacked bar + heatmap",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "Heatmap",
+     "variant": "intensity"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-29",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Capital",
+   "group": "Capital",
+   "title": "Capital generation vs consumption",
+   "whatItTells": "Whether earnings fund growth organically.",
+   "method": "Quarterly: internal capital generation (retained earnings) vs RWA growth; implied sustainable asset growth = ROE × (1 − payout) / target CAR. Source: P&L + RWA series.",
+   "vizLabel": "Combo bar + line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-30",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Capital",
+   "group": "Capital",
+   "title": "Stress impact on capital (bank-wide scenarios)",
+   "whatItTells": "Capital resilience under adverse scenarios.",
+   "method": "Apply macro scenarios (GDP shock, rate shock, sector default): project provisions, RWA and capital → pro-forma CAR path over 2–3 years vs minimum. Source: stress-testing framework on core exposures.",
+   "vizLabel": "Scenario lines vs minimum",
+   "panels": [
+    {
+     "component": "ScenarioBars",
+     "variant": "scenarios"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-31",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Bank-Wide Credit Risk",
+   "group": "Bank-Wide Credit Risk",
+   "title": "Total credit exposure & ECL by IFRS 9 stage",
+   "whatItTells": "The complete credit risk stock.",
+   "method": "Total exposure (loans + commitments + off-BS) mapped to Stage 1/2/3 with ECL per stage; coverage per stage; quarter-on-quarter migration value. Source: ECL engine.",
+   "vizLabel": "Stacked bar + waterfall (migration)",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-32",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Bank-Wide Credit Risk",
+   "group": "Bank-Wide Credit Risk",
+   "title": "NPL formation & cures (flow view)",
+   "whatItTells": "Whether the NPL stock is being refilled faster than it's drained.",
+   "method": "Monthly: new NPL inflows + restructured additions − cures − upgrades − write-offs − recoveries = ΔNPL stock. Flow waterfall per month. Source: loan classification history.",
+   "vizLabel": "Waterfall",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-33",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Bank-Wide Credit Risk",
+   "group": "Bank-Wide Credit Risk",
+   "title": "Bank-wide NPL ratio & coverage (with division split)",
+   "whatItTells": "Headline asset quality.",
+   "method": "NPL ratio = Stage 3 / gross loans, total and retail/corporate; coverage = ECL / Stage 3; trend 24 months. Source: ECL engine + GL.",
+   "vizLabel": "Dual-axis line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "dualAxisLines"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-34",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Bank-Wide Credit Risk",
+   "group": "Bank-Wide Credit Risk",
+   "title": "Past-due but not impaired trend",
+   "whatItTells": "The pipeline feeding future NPLs.",
+   "method": "Total exposure 1–89 days past due by bucket, retail + corporate, monthly trend; leading indicator vs NPL lag. Source: DPD snapshots.",
+   "vizLabel": "Stacked area",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-35",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Bank-Wide Credit Risk",
+   "group": "Bank-Wide Credit Risk",
+   "title": "Concentration: sectors, groups, products (whole book)",
+   "whatItTells": "Aggregate concentration across both divisions.",
+   "method": "Total credit exposure by sector, by obligor group (top 20 vs capital), and by product — retail + corporate combined; HHI per dimension. Source: exposure aggregation.",
+   "vizLabel": "Treemap + Pareto",
+   "panels": [
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    },
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "G-36",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Bank-Wide Credit Risk",
+   "group": "Bank-Wide Credit Risk",
+   "title": "Write-offs & recoveries bank-wide",
+   "whatItTells": "Final losses and the salvage rate.",
+   "method": "Monthly write-offs (GL) and recovery collections; recovery rate = recoveries / opening written-off stock; net loss = write-offs − recoveries. Source: GL + collections.",
+   "vizLabel": "Combo bar + line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-37",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Bank-Wide Credit Risk",
+   "group": "Bank-Wide Credit Risk",
+   "title": "Restructured & forborne exposure (total)",
+   "whatItTells": "Total forbearance across the bank.",
+   "method": "All exposures with forbearance flag (retail + corporate); % of gross loans; performance of previously restructured book (re-default rate). Source: facility master + classification.",
+   "vizLabel": "KPI + trend",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-38",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Operations & Efficiency",
+   "group": "Operations & Efficiency",
+   "title": "Total transaction volumes & system load",
+   "whatItTells": "Operational throughput of the bank.",
+   "method": "Daily/monthly count of all transactions processed (all channels, retail + corporate + treasury settlements); peak-day volume; growth trend — capacity planning input. Source: transaction ledger + payment hub.",
+   "vizLabel": "Line chart with peak markers",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "peakMarkers"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-39",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Operations & Efficiency",
+   "group": "Operations & Efficiency",
+   "title": "Straight-through processing (STP) rate",
+   "whatItTells": "Automation level of operations.",
+   "method": "STP rate = transactions completed without manual intervention / total transactions, per process (payments, onboarding, trade); manual-touch volume = rework queue. Source: workflow/operations systems.",
+   "vizLabel": "Bullet chart vs target",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-40",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Operations & Efficiency",
+   "group": "Operations & Efficiency",
+   "title": "Branch network performance (whole network)",
+   "whatItTells": "Total physical footprint productivity.",
+   "method": "Network totals: transactions, accounts opened, deposits, loans per branch; ranking and quartile analysis; revenue per branch vs cost per branch. Source: branch-coded core data + cost centres.",
+   "vizLabel": "Ranked bar + map",
+   "panels": [
+    {
+     "component": "RankedBar",
+     "variant": "plain"
+    },
+    {
+     "component": "GeoMap",
+     "variant": "iraqBranches"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "G-41",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Operations & Efficiency",
+   "group": "Operations & Efficiency",
+   "title": "Digital share of total transactions",
+   "whatItTells": "The single migration KPI for the whole bank.",
+   "method": "Digital share = (mobile + online + host-to-host transactions) / total transactions; monthly trend, retail and corporate lines on one chart. Source: transaction channel field.",
+   "vizLabel": "Stacked area",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-42",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Operations & Efficiency",
+   "group": "Operations & Efficiency",
+   "title": "Revenue & cost per FTE",
+   "whatItTells": "Organizational productivity.",
+   "method": "Revenue per FTE = operating income / average headcount; cost per FTE = staff cost / headcount; trend vs peers. Source: P&L + HR headcount feed.",
+   "vizLabel": "Dual-axis line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "dualAxisLines"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-43",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Operations & Efficiency",
+   "group": "Operations & Efficiency",
+   "title": "Operational losses & incidents",
+   "whatItTells": "Cost of operational risk events.",
+   "method": "Count and gross/net loss of operational risk events by Basel event type (fraud, process, systems, legal); near-miss count; trend. Source: op-risk event log (fed by core banking incidents).",
+   "vizLabel": "Pareto + trend",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-44",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Franchise & Customers",
+   "group": "Franchise & Customers",
+   "title": "Total customer base & total accounts (combined)",
+   "whatItTells": "The full franchise on one number.",
+   "method": "Total active customers (retail + corporate de-duplicated where a person is both) and total open accounts by product family; growth trend. Source: customer master + account master.",
+   "vizLabel": "KPI + stacked bar",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": true
+  },
+  {
+   "id": "G-45",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Franchise & Customers",
+   "group": "Franchise & Customers",
+   "title": "New accounts opened bank-wide",
+   "whatItTells": "Total sales momentum across divisions.",
+   "method": "Count of all new accounts/facilities/cards opened per month, all products, split retail/corporate; vs target. Source: origination dates across product masters.",
+   "vizLabel": "Stacked bar vs target line",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": true
+  },
+  {
+   "id": "G-46",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Franchise & Customers",
+   "group": "Franchise & Customers",
+   "title": "Cross-division synergy metrics",
+   "whatItTells": "How well the two divisions feed each other.",
+   "method": "Payroll loop: corporate payroll clients → employee salary accounts → their deposits/loans/cards. Referral flows: corporate-introduced retail customers and vice versa; revenue from cross-division clients. Source: linkage keys between corporate payroll files and retail accounts.",
+   "vizLabel": "Sankey + KPI",
+   "panels": [
+    {
+     "component": "SankeyDiagram",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-47",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Franchise & Customers",
+   "group": "Franchise & Customers",
+   "title": "Total active digital users (retail + corporate)",
+   "whatItTells": "Bank-wide digital reach.",
+   "method": "MAU across mobile, online and corporate portal; penetration vs total customer base; login → transaction conversion. Source: digital platform logs.",
+   "vizLabel": "KPI + adoption curve",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "adoptionCurve"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-48",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Franchise & Customers",
+   "group": "Franchise & Customers",
+   "title": "Customer complaints & service quality",
+   "whatItTells": "Voice of the customer as an operational signal.",
+   "method": "Complaints per 10k customers by category (fees, service, digital, cards); average resolution time; repeat-complaint rate. Source: CRM/complaints module linked to customer master.",
+   "vizLabel": "Pareto + trend",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "G-49",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Compliance & Financial Crime",
+   "group": "Compliance & Financial Crime",
+   "title": "AML alerts & suspicious transaction reports",
+   "whatItTells": "Financial-crime workload and outcomes.",
+   "method": "Alerts generated by transaction-monitoring rules, alerts closed as false positive, cases escalated, STRs filed; alert-to-STR conversion. Source: AML system on top of transaction ledger.",
+   "vizLabel": "Funnel + trend",
+   "panels": [
+    {
+     "component": "FunnelChart",
+     "variant": "plain"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "G-50",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Compliance & Financial Crime",
+   "group": "Compliance & Financial Crime",
+   "title": "Large & threshold cash transactions",
+   "whatItTells": "Regulatory cash-reporting compliance.",
+   "method": "Count/value of cash transactions above regulatory reporting thresholds per month; % reported within deadline. Source: transaction ledger cash flags.",
+   "vizLabel": "KPI + bar",
+   "panels": [
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "G-51",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Compliance & Financial Crime",
+   "group": "Compliance & Financial Crime",
+   "title": "Sanctions screening hits & blocked/frozen accounts",
+   "whatItTells": "Sanctions exposure handling.",
+   "method": "Screening hits (customer and payment), confirmed true matches, accounts frozen/unfrozen, value blocked. Source: sanctions screening engine + account status table.",
+   "vizLabel": "KPI tiles + trend",
+   "panels": [
+    {
+     "component": "KpiCards",
+     "variant": "plain"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "G-52",
+   "layer": "bank-wide",
+   "layerLabel": "Bank-Wide",
+   "domain": "Compliance & Financial Crime",
+   "group": "Compliance & Financial Crime",
+   "title": "Regulatory reporting timeliness & data quality",
+   "whatItTells": "Whether the bank reports to the regulator on time and correctly.",
+   "method": "Reports submitted on time / total due; rejection/correction rate from regulator; data-quality exceptions (missing fields, breaks) in core extracts. Source: regulatory reporting log + DQ rules on extracts.",
+   "vizLabel": "Bullet vs 100% + exception count",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    },
+    {
+     "component": "DataTable",
+     "variant": "exception"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-01",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Total active customers & growth (MoM/YoY)",
+   "whatItTells": "Size and momentum of the retail franchise — the base every other metric sits on.",
+   "method": "Count DISTINCT customer IDs with status = 'Active' in the customer master at month-end (active = at least one open account). Growth % = (Active(t) − Active(t−1)) / Active(t−1). Split 'New' (onboarding date falls within the month) vs 'Existing'. Source: customer master + account status table, monthly snapshot.",
+   "vizLabel": "KPI cards + line chart",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": true
+  },
+  {
+   "id": "R-02",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "New customer acquisition funnel (lead → application → KYC → activated)",
+   "whatItTells": "Where onboarding loses prospects and which stage needs fixing.",
+   "method": "Count customers reaching each stage in the period: leads (CRM), application started, application submitted, KYC approved, first account activated. Stage conversion % = customers in stage N+1 / customers in stage N. Source: origination/onboarding workflow logs.",
+   "vizLabel": "Funnel chart",
+   "panels": [
+    {
+     "component": "FunnelChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-03",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Customer attrition / churn rate & lost balances",
+   "whatItTells": "How fast the base is leaking and the funding that leaves with it.",
+   "method": "Churn rate = customers who closed all accounts or turned dormant in period / active customers at period start. Lost balances = average total deposit balance of churned customers over their last 3 active months. Source: account closure table + daily balance snapshots.",
+   "vizLabel": "Line chart + waterfall (gained vs lost)",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-04",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Customer segmentation mix (mass / affluent / premium / payroll / youth)",
+   "whatItTells": "Composition of the base and whether the bank is moving up-market.",
+   "method": "Assign each customer to a segment using the bank's rule (e.g. by total relationship balance/AUM bands or salary flag). Segment % = customers in segment / total active customers. Track mix monthly. Source: customer master segment flag, or computed from aggregated relationship balances.",
+   "vizLabel": "Donut / 100% stacked bar",
+   "panels": [
+    {
+     "component": "DonutChart",
+     "variant": "plain"
+    },
+    {
+     "component": "StackedBar",
+     "variant": "percent"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "R-05",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Demographic profile (age, gender, geography, salary band)",
+   "whatItTells": "Who the customers actually are — drives product and channel strategy.",
+   "method": "Group active customers by age band (from date of birth in KYC), gender, governorate/region (address), and salary band (from salary credit amounts). Present as % of active base. Source: customer master (KYC) + salary credit transactions.",
+   "vizLabel": "Stacked bars + choropleth map",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "GeoMap",
+     "variant": "iraqBranches"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-06",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Cohort retention (3/6/12-month survival of new customers)",
+   "whatItTells": "Whether newly acquired customers actually stay and transact.",
+   "method": "Group customers by onboarding month (cohort). For each cohort, retention at month n = cohort members with ≥1 customer-initiated transaction in month n / cohort size. Build for n = 3, 6, 12. Source: customer master onboarding date + transaction ledger.",
+   "vizLabel": "Cohort heatmap grid",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "cohort"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "R-07",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Dormant & inactive accounts trend",
+   "whatItTells": "Silent attrition — accounts that are technically open but economically dead.",
+   "method": "Account is dormant if no customer-initiated debit/credit (exclude interest & bank fees) for 90 or 180 days. Dormancy rate = dormant accounts / total open accounts; also sum balances sitting in dormant accounts. Source: transaction ledger last-activity date per account.",
+   "vizLabel": "KPI + trend line",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": true
+  },
+  {
+   "id": "R-08",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Customer lifetime value (CLV) by segment & channel",
+   "whatItTells": "What a customer is worth — guides how much to spend acquiring and retaining them.",
+   "method": "CLV = (annual NII contribution + annual fee income − annual cost-to-serve − annual expected loss) × expected relationship lifetime in years. Practical proxy: 12-month rolling revenue per customer by segment and acquisition channel. Source: GL revenue mapped to accounts via FTP + cost allocation model.",
+   "vizLabel": "Box plot / bar chart",
+   "panels": [
+    {
+     "component": "BoxPlot",
+     "variant": "plain"
+    },
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-09",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Products per customer (cross-holding index)",
+   "whatItTells": "Depth of relationship — the strongest predictor of retention and profitability.",
+   "method": "Count distinct active product families held per customer (deposits, personal loan, mortgage, auto, credit card, digital banking, bancassurance). Cross-holding index = Σ products held / total active customers. Compare by segment. Source: account/facility master linked at customer level.",
+   "vizLabel": "Histogram / bullet chart vs target",
+   "panels": [
+    {
+     "component": "Histogram",
+     "variant": "single"
+    },
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "R-10",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Customer Growth & Base",
+   "group": "Customer Growth & Base",
+   "title": "Channel behaviour mix (digital-only / branch-only / hybrid)",
+   "whatItTells": "How customers interact with the bank — feeds branch network and digital investment decisions.",
+   "method": "Classify each customer by dominant channel: digital-only (≥80% of transactions on mobile/online), branch-only (≥80% teller), hybrid (rest). Trend the % mix monthly. Source: transaction ledger channel field per customer.",
+   "vizLabel": "Stacked bar over time",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "R-11",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Total retail deposits trend (MoM/YoY growth)",
+   "whatItTells": "Core funding base and its trajectory.",
+   "method": "Month-end sum of all retail liability account balances (current, savings, term, call), reconciled to the GL control accounts. Growth = (Balance(t) − Balance(t−1)) / Balance(t−1) for MoM and vs t−12 for YoY. Source: daily balance snapshot aggregated to month-end.",
+   "vizLabel": "Area / line chart",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "single"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-12",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "CASA ratio (current + savings share of deposits)",
+   "whatItTells": "Funding quality — cheap, sticky deposits vs expensive term money.",
+   "method": "CASA ratio = (current account balances + savings account balances) / total retail deposits. Compute on month-end balances and on monthly averages (average = mean of daily balances). Source: balance snapshots by product code.",
+   "vizLabel": "Gauge + trend line",
+   "panels": [
+    {
+     "component": "GaugeChart",
+     "variant": "target"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "R-13",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Deposit mix by product",
+   "whatItTells": "Structure of the liability book and product-level shifts.",
+   "method": "Sum month-end balances grouped by product code (current, savings, term deposits, call deposits, special schemes); express each as % of total. Source: account master product mapping + balances.",
+   "vizLabel": "Stacked bar / treemap",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "R-14",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Term deposit maturity ladder",
+   "whatItTells": "Upcoming repricing and runoff risk in the term book.",
+   "method": "Sum term deposit principal by contractual maturity month for the next 12 months. Flag any month where maturing amount > 15% of the total term book (concentration risk). Source: TD account master maturity date + principal.",
+   "vizLabel": "Stacked bar (maturity profile)",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "ladder"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-15",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Term deposit flows (new / matured / withdrawn / rolled over)",
+   "whatItTells": "Whether the term book is actually being retained at maturity.",
+   "method": "Closing stock = opening stock + new placements − withdrawals at maturity − early withdrawals (rollover = maturity withdrawal + simultaneous new placement by same customer). Decompose monthly change into these components. Source: TD transaction table.",
+   "vizLabel": "Waterfall chart",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-16",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Average balance per customer by segment",
+   "whatItTells": "Quality and depth of deposit relationships per segment.",
+   "method": "Average balance = total segment deposit balance (monthly average of daily balances) / active customers in segment. Trend by segment; compare vs target. Source: balance snapshots + customer segment mapping.",
+   "vizLabel": "Bar chart with benchmark line",
+   "panels": [
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "R-17",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Deposit concentration (top 1% / 5% of customers)",
+   "whatItTells": "Dependence on a small number of large depositors — a liquidity vulnerability.",
+   "method": "Rank retail customers by total deposit balance descending; compute cumulative share of deposits vs cumulative share of customers; report the top-1%, top-5% and top-10% shares. Source: customer-level aggregated balances.",
+   "vizLabel": "Pareto chart (Lorenz curve)",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "lorenz"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "R-18",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Cost of deposits vs benchmark rate",
+   "whatItTells": "What the funding actually costs and its spread to market rates.",
+   "method": "Cost of deposits = retail deposit interest expense (from GL, monthly accrual) / average retail deposit balance for the month, annualized (× 365/days). Plot against central bank policy rate or benchmark. Source: GL interest expense accounts + average balances.",
+   "vizLabel": "Dual-axis line chart",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "dualAxisLines"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-19",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Deposit stickiness / stability indicators",
+   "whatItTells": "Which balances will survive a stress — key input to liquidity risk.",
+   "method": "Balance volatility = standard deviation of daily balances / average daily balance, per segment, per month. Salary-account stability = % of salary-flagged accounts that received a salary credit in each of the last 3 months. Source: daily balances + salary transactions.",
+   "vizLabel": "Heatmap (segment × month)",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "intensity"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-20",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Deposits & Liabilities",
+   "group": "Deposits & Liabilities",
+   "title": "Rate-sensitive deposits repricing exposure",
+   "whatItTells": "How fast funding costs reprice when rates move.",
+   "method": "Bucket balances by next repricing/reset period: <1M, 1–3M, 3–6M, 6–12M, >12M, non-maturing (CASA treated as overnight or per behavioural model). Sum per bucket; % of total. Source: account repricing date fields.",
+   "vizLabel": "Stacked bar by rate bucket",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "ladder"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-21",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Loan book size & growth by product",
+   "whatItTells": "Scale and trajectory of the retail asset book.",
+   "method": "Month-end outstanding principal by product (personal, auto, mortgage, credit-card receivables), reconciled to GL. Growth MoM/YoY per product and total. Source: loan account master + balance snapshots.",
+   "vizLabel": "Stacked area chart",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-22",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "New loan originations (volume & value) with approval rate",
+   "whatItTells": "Sales engine output and credit policy tightness.",
+   "method": "Originations = count and sum of loans disbursed with value date in the month. Approval rate = approved applications / decided applications (approved + declined; exclude customer-withdrawn). Source: origination system + disbursement table.",
+   "vizLabel": "Combo: bars (volume) + line (approval %)",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-23",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Application funnel per product (applied → approved → disbursed)",
+   "whatItTells": "Where credit demand leaks between application and booking.",
+   "method": "Per product: count applications received → credit-approved → offer accepted → disbursed. Stage conversion % = N+1 / N; identify the biggest drop-off stage. Source: loan origination workflow logs.",
+   "vizLabel": "Funnel chart per product",
+   "panels": [
+    {
+     "component": "FunnelChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-24",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Average ticket size & tenor distribution",
+   "whatItTells": "Shape of new lending — small-short vs large-long.",
+   "method": "For loans disbursed in the period: distribution (P25, median, P75) of original principal and original tenor in months. Slice by product. Source: loan master original terms.",
+   "vizLabel": "Histogram / box plot",
+   "panels": [
+    {
+     "component": "Histogram",
+     "variant": "single"
+    },
+    {
+     "component": "BoxPlot",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-25",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Credit card portfolio: active rate, utilization, revolve rate",
+   "whatItTells": "Health and profitability of the card book in three numbers.",
+   "method": "Active rate = cards with ≥1 transaction in last 90 days / total issued cards. Utilization = total outstanding / total credit limits. Revolve rate = balances of cardholders paying less than full statement balance / total outstanding. Source: card management system.",
+   "vizLabel": "KPI cards + bullet charts",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-26",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Mortgage book: LTV distribution & fixed vs variable split",
+   "whatItTells": "Collateral risk and rate sensitivity of the biggest retail asset.",
+   "method": "Current LTV = current outstanding / latest property valuation (fallback: original LTV). Bucket: <50%, 50–70%, 70–80%, 80–90%, >90%; show exposure per bucket. Fixed/variable split from interest-type field. Source: mortgage master + collateral table.",
+   "vizLabel": "Histogram + donut",
+   "panels": [
+    {
+     "component": "Histogram",
+     "variant": "single"
+    },
+    {
+     "component": "DonutChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-27",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Rejection analysis by reason & segment",
+   "whatItTells": "Why the bank says no — and whether good business is being declined.",
+   "method": "Count declined applications by decline reason code (score, income, DSR, policy, documentation); Pareto the reasons; slice by segment and score band. Source: origination decision log.",
+   "vizLabel": "Pareto chart",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-28",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Prepayment / early-settlement rate",
+   "whatItTells": "How fast the book runs off before maturity — hits margin and reinvestment risk.",
+   "method": "Monthly prepayment rate = early full/partial settlement principal in month / average outstanding book. Annualize (×12) as a CPR-style proxy. Source: settlement transactions flagged 'early'.",
+   "vizLabel": "Trend line",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-29",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Product yield & margin (NIM by product)",
+   "whatItTells": "Whether each lending product earns its spread.",
+   "method": "Gross yield = interest income (GL, accrual) per product / average outstanding, annualized. Product margin = gross yield − cost of funds (FTP rate for matching tenor). Source: GL interest income + FTP engine.",
+   "vizLabel": "Bullet chart vs target",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-30",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Lending",
+   "group": "Retail Lending",
+   "title": "Restructured / rescheduled retail loans",
+   "whatItTells": "Hidden stress — problem loans kept alive by modifying terms.",
+   "method": "Outstanding of loans carrying a restructure flag (tenor extension, rate relief, rescheduling due to financial difficulty); % of gross retail book; monthly trend and new restructures added per month. Source: loan master restructure flag.",
+   "vizLabel": "KPI + line chart",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-31",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Payments, Cards & Transactions",
+   "group": "Payments, Cards & Transactions",
+   "title": "Card spend volume/value by type & merchant category",
+   "whatItTells": "What customers spend on — drives card product and merchant strategy.",
+   "method": "Sum count and value of card transactions by type (POS, e-commerce, ATM) and by merchant category code (MCC) group (grocery, fuel, dining, travel…). Monthly trend. Source: card switch / transaction authorization log.",
+   "vizLabel": "Stacked bar + treemap",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-32",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Payments, Cards & Transactions",
+   "group": "Payments, Cards & Transactions",
+   "title": "Interchange & card fee income per product",
+   "whatItTells": "Non-interest revenue engine of the card business.",
+   "method": "Interchange and card fees from GL fee income accounts mapped to card products; per active card = fee income / active cards. Source: GL fee accounts + card system.",
+   "vizLabel": "Bar chart",
+   "panels": [
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-33",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Payments, Cards & Transactions",
+   "group": "Payments, Cards & Transactions",
+   "title": "Transactions per active customer",
+   "whatItTells": "Engagement depth — the bank's place in the customer's daily life.",
+   "method": "Customer-initiated transactions in month (all channels) / active customers; segment the ratio; trend. Source: transaction ledger excluding system-generated entries.",
+   "vizLabel": "Trend line by segment",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-34",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Payments, Cards & Transactions",
+   "group": "Payments, Cards & Transactions",
+   "title": "Salary inflows & post-salary spend pattern",
+   "whatItTells": "The payroll franchise: money in, and where it flows out.",
+   "method": "Identify salary credits (employer code / narrative pattern). Salary inflow = sum of salary credits per month. Post-salary spend = debits within 10 days of salary date, grouped by category (transfers, cards, cash, bill pay). Source: transaction ledger.",
+   "vizLabel": "Sankey (salary → spend categories)",
+   "panels": [
+    {
+     "component": "SankeyDiagram",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "R-35",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Payments, Cards & Transactions",
+   "group": "Payments, Cards & Transactions",
+   "title": "Peak transaction times & seasonality",
+   "whatItTells": "When load hits systems and branches — capacity and marketing timing.",
+   "method": "Count transactions by hour-of-day × day-of-week from transaction timestamps; also month-of-year seasonality index = month volume / average month. Source: transaction ledger timestamps.",
+   "vizLabel": "Heatmap (hour × day)",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "intensity"
+    }
+   ],
+   "refresh": "Daily",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-36",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Payments, Cards & Transactions",
+   "group": "Payments, Cards & Transactions",
+   "title": "Cash vs cashless trend",
+   "whatItTells": "Progress of the cashless agenda and pressure on the ATM/branch network.",
+   "method": "Cash = ATM/counter withdrawal value per month. Cashless = POS + e-commerce + transfers value. Plot both lines and the cashless share = cashless / (cash + cashless). Source: transaction ledger by type.",
+   "vizLabel": "Dual trend lines",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "dualAxisLines"
+    }
+   ],
+   "refresh": "Daily",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-37",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Channels & Digital",
+   "group": "Channels & Digital",
+   "title": "Digital penetration (MAU/DAU) & adoption curve",
+   "whatItTells": "Digital banking reach — the headline digital KPI.",
+   "method": "MAU = distinct customers with ≥1 login or transaction on mobile/online in the month. DAU = same per day. Penetration = MAU / active customers; stickiness = DAU / MAU. Source: digital banking platform logs joined to customer master.",
+   "vizLabel": "KPI + adoption curve",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "adoptionCurve"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-38",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Channels & Digital",
+   "group": "Channels & Digital",
+   "title": "Channel migration (branch → digital)",
+   "whatItTells": "Whether transactions are actually shifting to cheaper channels.",
+   "method": "Share of total transaction count per channel (branch teller, ATM, mobile, online, POS) per month; track the digital share trend. Source: transaction ledger channel field.",
+   "vizLabel": "Stacked area chart",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-39",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Channels & Digital",
+   "group": "Channels & Digital",
+   "title": "Cost per transaction by channel",
+   "whatItTells": "The economic case for digital migration.",
+   "method": "Cost per transaction = fully-loaded monthly channel cost (branch: premises+staff allocated; ATM: fleet cost; digital: platform run cost) / transactions processed on that channel. Source: cost centre GL + transaction counts.",
+   "vizLabel": "Bar chart",
+   "panels": [
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-40",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Channels & Digital",
+   "group": "Channels & Digital",
+   "title": "Branch productivity & profitability",
+   "whatItTells": "Which branches earn their keep.",
+   "method": "Per branch: accounts opened, deposit balances, loans booked, revenue; divide by branch FTE; compute branch-level contribution (revenue − direct costs). Rank. Source: branch code on accounts/facilities + cost centre GL.",
+   "vizLabel": "Ranked bar + map",
+   "panels": [
+    {
+     "component": "RankedBar",
+     "variant": "plain"
+    },
+    {
+     "component": "GeoMap",
+     "variant": "iraqBranches"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-41",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Channels & Digital",
+   "group": "Channels & Digital",
+   "title": "ATM network performance",
+   "whatItTells": "Availability and efficiency of the self-service fleet.",
+   "method": "Uptime % = available hours / total hours per ATM. Transactions per ATM per day. Cash-out incidents = count of out-of-cash events. Show per site and network average. Source: ATM monitoring system.",
+   "vizLabel": "KPI tiles + map",
+   "panels": [
+    {
+     "component": "KpiCards",
+     "variant": "plain"
+    },
+    {
+     "component": "GeoMap",
+     "variant": "iraqBranches"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-42",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Channels & Digital",
+   "group": "Channels & Digital",
+   "title": "Digital onboarding volume & drop-off",
+   "whatItTells": "Whether customers can join without a branch visit.",
+   "method": "Accounts opened via digital channels vs branch per month. Drop-off = (applications started − completed) / started, measured per onboarding step to find the friction point. Source: digital onboarding platform logs.",
+   "vizLabel": "Funnel comparison",
+   "panels": [
+    {
+     "component": "FunnelChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "R-43",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Risk & Collections",
+   "group": "Retail Risk & Collections",
+   "title": "NPL ratio & NPL stock by product",
+   "whatItTells": "Credit quality headline for the retail book.",
+   "method": "NPL = loans 90+ days past due or otherwise classified non-performing per local regulator definition. NPL ratio = NPL stock / gross retail loans. Trend both the ratio and the value by product. Source: loan master DPD field + classification table.",
+   "vizLabel": "KPI gauge + stacked bar",
+   "panels": [
+    {
+     "component": "GaugeChart",
+     "variant": "target"
+    },
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "R-44",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Risk & Collections",
+   "group": "Retail Risk & Collections",
+   "title": "Delinquency buckets & roll rates",
+   "whatItTells": "Early warning — delinquency deteriorates months before NPLs show it.",
+   "method": "Outstanding by days-past-due bucket (current, 1–30, 31–60, 61–90, 90+). Roll rate = balance moving from bucket n to bucket n+1 during the month / prior-month bucket n balance. Source: monthly DPD snapshots.",
+   "vizLabel": "Roll-rate heatmap / Sankey",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "intensity"
+    },
+    {
+     "component": "SankeyDiagram",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-45",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Risk & Collections",
+   "group": "Retail Risk & Collections",
+   "title": "Vintage analysis (default by origination month)",
+   "whatItTells": "Whether recent underwriting is better or worse than older vintages.",
+   "method": "For each origination-month cohort: cumulative 90+ DPD balance / cohort's original disbursed amount, measured at 3, 6, 9, 12 months-on-book. Plot one curve per cohort and compare at equal age. Source: loan master + DPD history.",
+   "vizLabel": "Vintage curves (line chart)",
+   "panels": [
+    {
+     "component": "VintageCurves",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-46",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Risk & Collections",
+   "group": "Retail Risk & Collections",
+   "title": "Credit score distribution — new vs existing book",
+   "whatItTells": "Risk appetite drift in new lending.",
+   "method": "Histogram of bureau/internal scores for approvals in the period vs the stock of the book; watch migration toward lower score bands; report % of new lending below policy cutoff+margin. Source: origination score field.",
+   "vizLabel": "Histogram overlay",
+   "panels": [
+    {
+     "component": "Histogram",
+     "variant": "overlay"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-47",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Risk & Collections",
+   "group": "Retail Risk & Collections",
+   "title": "Collections performance (cure, recovery, PTP kept)",
+   "whatItTells": "Whether the collections machine works.",
+   "method": "Cure rate = accounts moving from delinquent to current in month / delinquent accounts at start. Recovery rate = cash collected / balance allocated to collections. PTP kept = promises-to-pay honoured / promises made. Source: collections system.",
+   "vizLabel": "KPI cards + trend",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-48",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Risk & Collections",
+   "group": "Retail Risk & Collections",
+   "title": "Write-offs & provisioning trend",
+   "whatItTells": "Realized losses and the buffer against future ones.",
+   "method": "Monthly write-off value (GL) and provision charge. Coverage ratio = total ECL provisions / NPL stock. Trend all three. Source: GL write-off and provision accounts + ECL engine.",
+   "vizLabel": "Waterfall / combo chart",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    },
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-49",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Risk & Collections",
+   "group": "Retail Risk & Collections",
+   "title": "Fraud incidents & losses by type/channel",
+   "whatItTells": "Fraud pressure and where controls are failing.",
+   "method": "Confirmed fraud cases and gross/net losses by type (card-not-present, skimming, phishing, account takeover) and channel; incidents per 10k active cards as intensity metric. Source: fraud management system.",
+   "vizLabel": "Bar + trend line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-50",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Profitability",
+   "group": "Retail Profitability",
+   "title": "Revenue per customer by segment",
+   "whatItTells": "Which segments actually pay for themselves.",
+   "method": "Revenue per customer = (NII allocated via FTP + direct fee income) / active customers, per segment. NII allocation: account balance × (customer rate − FTP). Source: FTP engine + GL fee mapping.",
+   "vizLabel": "Bar chart",
+   "panels": [
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-51",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Profitability",
+   "group": "Retail Profitability",
+   "title": "Product-level P&L contribution",
+   "whatItTells": "Full profitability per product after all costs and risk.",
+   "method": "Per product: interest income + fee income − FTP funding cost − direct operating cost allocation − provision charge = product contribution. Build monthly and YTD. Source: management accounting / profitability engine.",
+   "vizLabel": "Waterfall / treemap",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    },
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-52",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Profitability",
+   "group": "Retail Profitability",
+   "title": "Fee income breakdown",
+   "whatItTells": "Diversification of retail non-interest income.",
+   "method": "Group GL fee lines: account maintenance, card fees, FX & remittances, late fees, bancassurance commissions; each as % of total retail fees; trend. Source: GL fee income accounts.",
+   "vizLabel": "Stacked bar",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "R-53",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Profitability",
+   "group": "Retail Profitability",
+   "title": "Cost-to-serve vs revenue per customer",
+   "whatItTells": "The unprofitable tail — how many customers cost more than they bring.",
+   "method": "Cost-to-serve per customer = (channel costs + product opex allocated) / active customers per segment. Scatter each segment/customer decile: x = revenue per customer, y = cost per customer; diagonal = break-even. Source: activity-based costing model.",
+   "vizLabel": "Scatter plot (cost vs revenue)",
+   "panels": [
+    {
+     "component": "ScatterPlot",
+     "variant": "breakEven"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "R-54",
+   "layer": "retail",
+   "layerLabel": "Retail Banking",
+   "domain": "Retail Profitability",
+   "group": "Retail Profitability",
+   "title": "Campaign ROI & response rate",
+   "whatItTells": "Whether marketing spend generates balances, not just noise.",
+   "method": "Response rate = customers taking the offer / targeted customers. Incremental uplift = average balance/volume change in target group minus change in matched control group. ROI = annualized incremental margin / campaign cost. Source: campaign platform + balance snapshots.",
+   "vizLabel": "Bar + KPI",
+   "panels": [
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-01",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "Active corporate clients by segment & sector",
+   "whatItTells": "Shape of the corporate franchise.",
+   "method": "Count customers with status active AND (at least one live facility OR deposit account), grouped by segment (large corporate / mid-cap / SME) and sector (industry classification code). Source: corporate customer master + facility master.",
+   "vizLabel": "Stacked bar / treemap",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "C-02",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "New-to-bank clients & onboarding cycle time",
+   "whatItTells": "Acquisition engine and onboarding friction for corporates.",
+   "method": "New-to-bank = relationships whose first facility/account opened in the period. Cycle time = calendar days from complete application to first drawdown/activation; report average and P90. Source: origination/CRM + facility master dates.",
+   "vizLabel": "KPI + funnel",
+   "panels": [
+    {
+     "component": "FunnelChart",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-03",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "Client attrition & lost revenue",
+   "whatItTells": "Relationships quietly leaving and the P&L walking out with them.",
+   "method": "Attrited = clients with all facilities closed and balances ~zero for 3+ consecutive months. Lost revenue = trailing 12-month revenue of attrited clients. Reason codes from RM exit notes. Source: customer master + revenue mapping.",
+   "vizLabel": "Waterfall + Pareto",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    },
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-04",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "Relationship Manager (RM) scorecard",
+   "whatItTells": "Per-RM commercial performance and accountability.",
+   "method": "Per RM portfolio: total commitments, drawn outstanding, deposits, revenue (NII + fees), NPL %, new clients won. Compare vs individual targets. Source: RM ownership field on customer master + product aggregates.",
+   "vizLabel": "Ranked bar / scorecard table",
+   "panels": [
+    {
+     "component": "RankedBar",
+     "variant": "plain"
+    },
+    {
+     "component": "DataTable",
+     "variant": "exception"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "C-05",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "Share of wallet per client",
+   "whatItTells": "Headroom inside existing relationships.",
+   "method": "Share of wallet = RTB total exposure (or deposits) / client's total banking exposure across all banks — from credit bureau corporate reports where available, else RM estimates reviewed annually. Track for top-100 clients. Source: bureau + internal exposure.",
+   "vizLabel": "Bullet chart",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-06",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "Products per relationship (cross-sell matrix)",
+   "whatItTells": "Relationship depth and white-space for cross-sell.",
+   "method": "Count distinct product families per client: credit, deposits, trade finance, cash management, FX, treasury/hedging. Heatmap of client tier × product family holding %. Source: product masters joined at group/customer level.",
+   "vizLabel": "Heatmap (client tier × product)",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "intensity"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "C-07",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "Client profitability concentration (Pareto)",
+   "whatItTells": "How much of corporate profit depends on how few clients.",
+   "method": "Rank clients by annual contribution (revenue − FTP funding cost − expected loss − allocated cost); plot cumulative % of contribution vs cumulative % of clients; report top-20% share. Source: profitability engine.",
+   "vizLabel": "Pareto chart",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-08",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Client Base & Relationships",
+   "group": "Client Base & Relationships",
+   "title": "Dormant credit lines & inactive relationships",
+   "whatItTells": "Committed capital earning nothing.",
+   "method": "Approved, undrawn limits with zero utilization for 6+ months: count and value, per RM. Also relationships with no revenue-generating activity in 12 months. Source: facility master utilization history.",
+   "vizLabel": "KPI + trend",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": true
+  },
+  {
+   "id": "C-09",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Loan book by facility type",
+   "whatItTells": "Composition of the corporate asset engine.",
+   "method": "Month-end outstanding by facility type (overdraft/working capital, term loan, project finance, real estate, syndicated share), reconciled to GL. Growth per type. Source: facility master + balances.",
+   "vizLabel": "Stacked area",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-10",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Sector / industry concentration",
+   "whatItTells": "Whether the book is dangerously skewed to one industry.",
+   "method": "Exposure (drawn + undrawn commitments) by sector as % of corporate book; add Herfindahl index HHI = Σ(sector share)² as a single concentration metric; alert when a sector exceeds internal cap. Source: facility master sector code.",
+   "vizLabel": "Treemap + heatmap (sector × rating)",
+   "panels": [
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    },
+    {
+     "component": "Heatmap",
+     "variant": "intensity"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "C-11",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Committed vs utilized limits (utilization rate)",
+   "whatItTells": "Capital efficiency — undrawn commitments carry cost and risk.",
+   "method": "Utilization = drawn outstanding / approved committed limit, per facility; aggregate exposure-weighted per segment and sector. Persistently low utilization (<20%) = repricing or limit-reduction candidates. Source: facility master limits + balances.",
+   "vizLabel": "Bullet chart per segment/sector",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-12",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Disbursements, renewals & repayments flow",
+   "whatItTells": "Gross vs net growth of the book.",
+   "method": "Monthly: new-money disbursements (new facilities), renewals (re-booked existing limits), repayments/prepayments. Net growth = disbursements − repayments. Source: facility transaction ledger.",
+   "vizLabel": "Combo bar + line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-13",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Maturity & repricing profile",
+   "whatItTells": "Refinancing wall and interest-rate sensitivity of the book.",
+   "method": "Outstanding by residual maturity bucket (<1Y, 1–3Y, 3–5Y, >5Y) and by next repricing date bucket (floating vs fixed, reset within 3/6/12 months). Source: facility master maturity & repricing fields.",
+   "vizLabel": "Stacked bar (maturity ladder)",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "ladder"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-14",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Risk-based pricing effectiveness",
+   "whatItTells": "Whether riskier clients actually pay more.",
+   "method": "Scatter per client: x = internal rating (PD band), y = effective yield = annualized interest income / average outstanding. Clients below the rating-yield curve are underpriced. Source: rating system + FTP/GL income.",
+   "vizLabel": "Scatter (rating vs yield)",
+   "panels": [
+    {
+     "component": "ScatterPlot",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "C-15",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Syndicated / club deal participation",
+   "whatItTells": "Role in the wholesale lending market.",
+   "method": "Facilities flagged as syndicated/club (bank not sole lender): count, bank's share value, fee income (arrangement/participation). Source: facility master syndication flag.",
+   "vizLabel": "KPI + bar",
+   "panels": [
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-16",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Covenant compliance status",
+   "whatItTells": "Early-warning discipline on loan conditions.",
+   "method": "Facilities with covenants: due-for-testing, tested-pass, tested-breach. Breach rate = facilities in breach / facilities tested in period; aging of unresolved breaches. Source: covenant tracking module.",
+   "vizLabel": "Traffic-light KPI table",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "rag"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-17",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Collateral coverage",
+   "whatItTells": "Second-way-out protection behind the corporate book.",
+   "method": "Coverage ratio = latest collateral valuation / exposure, per facility; mix by collateral type (real estate, cash, guarantees, movables); unsecured % = exposure with no registered collateral / total corporate exposure. Source: collateral management system.",
+   "vizLabel": "Stacked bar by collateral type",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "ladder"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-18",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Lending",
+   "group": "Corporate Lending",
+   "title": "Single-name & group concentration vs capital",
+   "whatItTells": "Regulatory and survival-level exposure limits.",
+   "method": "Top-20 single names/groups: exposure (drawn + undrawn + off-balance-sheet) / eligible capital; compare vs regulatory single-name limit (typically 25% of capital). Source: exposure aggregation at group level + regulatory capital.",
+   "vizLabel": "Pareto + limit line",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-19",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Deposits",
+   "group": "Corporate Deposits",
+   "title": "Corporate deposit balances by segment & sector",
+   "whatItTells": "The liability side of corporate relationships.",
+   "method": "Month-end corporate liability balances grouped by segment and sector; share of total bank deposits. Source: account master (corporate flag) + balances.",
+   "vizLabel": "Treemap",
+   "panels": [
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "C-20",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Deposits",
+   "group": "Corporate Deposits",
+   "title": "Operating vs non-operating balances",
+   "whatItTells": "How much of the funding is behaviourally stable.",
+   "method": "Operating balances = deposits of clients with active cash-management/payroll/collections linkage (transaction-driven, stable); non-operating = rate-sensitive surplus funds. Classify by product linkage and transaction activity; report operating %. Source: cash-management product flags + transaction behaviour.",
+   "vizLabel": "Stacked bar",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-21",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Deposits",
+   "group": "Corporate Deposits",
+   "title": "Top-10 depositor concentration",
+   "whatItTells": "Liquidity cliff risk from a few large names.",
+   "method": "Top-10 corporate deposit balances / total corporate deposits; monthly monitoring with alert above internal threshold (e.g. 30%). Source: customer-level aggregated balances.",
+   "vizLabel": "Pareto chart",
+   "panels": [
+    {
+     "component": "ParetoChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "C-22",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Deposits",
+   "group": "Corporate Deposits",
+   "title": "Average cost of corporate funds vs benchmark",
+   "whatItTells": "What corporate funding costs relative to market.",
+   "method": "Cost = interest expense on corporate deposits (GL) / average corporate deposit balance, annualized; spread vs policy/benchmark rate. Source: GL + average balances.",
+   "vizLabel": "Dual-axis line",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "dualAxisLines"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-23",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Deposits",
+   "group": "Corporate Deposits",
+   "title": "Margin / lien / escrow deposits tied to facilities",
+   "whatItTells": "Sticky but encumbered deposits backing credit exposure.",
+   "method": "Balances flagged as margin deposits (LC/guarantee cover), lien-held against facilities, or escrow; value and % of corporate deposits. Source: account master lien/margin flags.",
+   "vizLabel": "Stacked bar",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-24",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Deposits",
+   "group": "Corporate Deposits",
+   "title": "Large withdrawal / deposit attrition alerts",
+   "whatItTells": "Real-time tripwires on funding flight.",
+   "method": "Exception list: corporate accounts with outflows > X% of prior 3-month average balance, or any single outflow above an absolute threshold, in the period. Source: transaction ledger on corporate liability accounts.",
+   "vizLabel": "Exception table + KPI",
+   "panels": [
+    {
+     "component": "DataTable",
+     "variant": "exception"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "C-25",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Trade Finance & Guarantees",
+   "group": "Trade Finance & Guarantees",
+   "title": "Trade finance volumes (LCs, collections, guarantees)",
+   "whatItTells": "Activity level of the trade business.",
+   "method": "Monthly count and face value of: import LCs issued, export LCs advised, documentary collections, guarantees issued. Source: trade finance module.",
+   "vizLabel": "Stacked bar",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": true
+  },
+  {
+   "id": "C-26",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Trade Finance & Guarantees",
+   "group": "Trade Finance & Guarantees",
+   "title": "Trade finance fee income & yield",
+   "whatItTells": "Returns on trade activity.",
+   "method": "Trade commissions from GL fee accounts; fee yield = annualized trade fees / average outstanding trade volume; trend by product. Source: GL + trade module volumes.",
+   "vizLabel": "Line chart",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-27",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Trade Finance & Guarantees",
+   "group": "Trade Finance & Guarantees",
+   "title": "LC utilization & expiry analysis",
+   "whatItTells": "Whether issued LCs are actually used (unused LCs = contingent risk with no income).",
+   "method": "Utilization = total drawings under LCs / LC face value. Expired-unused rate = LCs expired with zero drawings / LCs issued in period. Source: trade module drawing events.",
+   "vizLabel": "Funnel / bullet chart",
+   "panels": [
+    {
+     "component": "FunnelChart",
+     "variant": "plain"
+    },
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-28",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Trade Finance & Guarantees",
+   "group": "Trade Finance & Guarantees",
+   "title": "Bank guarantees outstanding by type & sector",
+   "whatItTells": "Contingent exposure stock and where it sits.",
+   "method": "Outstanding guarantee exposure (face value) by type — bid bond, performance, advance payment, financial — and by sector. Source: guarantee module.",
+   "vizLabel": "Treemap",
+   "panels": [
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-29",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Trade Finance & Guarantees",
+   "group": "Trade Finance & Guarantees",
+   "title": "Guarantee crystallization (claims) rate",
+   "whatItTells": "How often guarantees turn into real losses — an underwriting quality signal.",
+   "method": "Claims rate = guarantees claimed/paid in period / guarantees matured in period; also claims paid / average outstanding guarantee stock. Trend. Source: guarantee claims log.",
+   "vizLabel": "KPI + trend",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-30",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Trade Finance & Guarantees",
+   "group": "Trade Finance & Guarantees",
+   "title": "Trade corridors (country / currency flows)",
+   "whatItTells": "Geographic and currency footprint of trade business.",
+   "method": "Trade volume grouped by counterparty country and transaction currency; FX income attached per corridor. Source: trade module country/currency fields.",
+   "vizLabel": "Choropleth map / Sankey",
+   "panels": [
+    {
+     "component": "GeoMap",
+     "variant": "iraqBranches"
+    },
+    {
+     "component": "SankeyDiagram",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "count",
+   "demoPath": false
+  },
+  {
+   "id": "C-31",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Trade Finance & Guarantees",
+   "group": "Trade Finance & Guarantees",
+   "title": "Off-balance-sheet exposure composition",
+   "whatItTells": "The full contingent liability picture.",
+   "method": "Total off-BS = undrawn irrevocable commitments + outstanding LCs + outstanding guarantees + acceptances; composition and % of total assets; reconciled to contingent liability GL. Source: GL + trade/facility modules.",
+   "vizLabel": "Waterfall",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-32",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Cash Management & Payments",
+   "group": "Cash Management & Payments",
+   "title": "Corporate payment volumes (transfers, bulk, payroll files)",
+   "whatItTells": "Transaction banking throughput.",
+   "method": "Monthly count and value of corporate-initiated payments by type (internal transfer, local ACH/RTGS, international, bulk/salary files). Source: payment hub.",
+   "vizLabel": "Stacked bar trend",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-33",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Cash Management & Payments",
+   "group": "Cash Management & Payments",
+   "title": "Cash management product penetration",
+   "whatItTells": "Adoption of the stickiest corporate products.",
+   "method": "Penetration = corporate clients with an active cash-management product (collections, sweeping, liquidity management, host-to-host) / total active corporate clients; by segment. Source: product holdings.",
+   "vizLabel": "Bullet chart",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-34",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Cash Management & Payments",
+   "group": "Cash Management & Payments",
+   "title": "Payroll processing & retail cross-sell loop",
+   "whatItTells": "The corporate-to-retail feeder machine.",
+   "method": "Count corporate payroll clients and salary files processed; count employee salary accounts opened and their retained deposit balances; loop metric = retail deposits from payroll employees / payroll value processed. Source: payroll files + retail account master.",
+   "vizLabel": "KPI + flow diagram",
+   "panels": [
+    {
+     "component": "SankeyDiagram",
+     "variant": "plain"
+    },
+    {
+     "component": "KpiCards",
+     "variant": "sparkline"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-35",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Cash Management & Payments",
+   "group": "Cash Management & Payments",
+   "title": "FX volumes & FX income by client tier",
+   "whatItTells": "Currency business contribution per relationship tier.",
+   "method": "FX deal count and volume per client tier; FX income = Σ (customer rate − interbank rate at deal time) × deal volume. Source: treasury/FX system.",
+   "vizLabel": "Bar + line combo",
+   "panels": [
+    {
+     "component": "ComboChart",
+     "variant": "barsPlusLine"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-36",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Cash Management & Payments",
+   "group": "Cash Management & Payments",
+   "title": "Corporate channel usage (host-to-host / portal / branch)",
+   "whatItTells": "Digital adoption on the corporate side.",
+   "method": "Share of corporate transaction count/value by origination channel: host-to-host/sFTP, corporate web portal, branch/manual. Trend. Source: payment hub channel field.",
+   "vizLabel": "Stacked area",
+   "panels": [
+    {
+     "component": "AreaChart",
+     "variant": "stacked"
+    }
+   ],
+   "refresh": "Daily / Monthly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-37",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "Risk rating distribution & migration",
+   "whatItTells": "Credit quality structure and its direction of travel.",
+   "method": "Exposure-weighted distribution across internal rating grades; quarterly migration matrix: % of exposure moving from grade i to grade j. Net upgrade/downgrade drift. Source: rating system snapshots.",
+   "vizLabel": "Heatmap (rating × period) + Sankey",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "intensity"
+    },
+    {
+     "component": "SankeyDiagram",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-38",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "Watchlist & early-warning exposure",
+   "whatItTells": "Tomorrow's NPLs, visible today.",
+   "method": "Exposure on accounts triggered by early-warning rules: rating downgrade, 30+ DPD, covenant breach, adverse bureau/news, limit excesses. Count and value by trigger type; aging on watchlist. Source: EWS engine.",
+   "vizLabel": "Traffic-light KPI + drill table",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "rag"
+    },
+    {
+     "component": "DataTable",
+     "variant": "exception"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-39",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "NPL ratio & IFRS 9 stage migration",
+   "whatItTells": "Regulatory credit quality view.",
+   "method": "Stage 1/2/3 exposure and ECL per IFRS 9 staging; NPL ratio = Stage 3 / gross corporate exposure; exposure migrating between stages between reporting dates. Source: ECL/staging engine.",
+   "vizLabel": "Stacked bar + trend",
+   "panels": [
+    {
+     "component": "StackedBar",
+     "variant": "absolute"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-40",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "Provisioning coverage ratio",
+   "whatItTells": "Cushion against recognized problem loans.",
+   "method": "Coverage = Stage 3 ECL provisions / Stage 3 exposure, per segment and sector; compare vs internal policy floor. Source: ECL engine.",
+   "vizLabel": "Bullet vs policy minimum",
+   "panels": [
+    {
+     "component": "BulletChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-41",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "Restructured facilities trend",
+   "whatItTells": "Forborne exposure — stress that hasn't hit NPL yet.",
+   "method": "Facilities with restructuring flag (modified terms due to financial difficulty): stock, % of corporate book, new restructures per quarter. Source: facility master flag.",
+   "vizLabel": "Line chart",
+   "panels": [
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-42",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "Sector risk heatmap",
+   "whatItTells": "One screen to compare industry risk.",
+   "method": "Matrix: sector × metric (NPL %, 30+ past-due %, downgrade %, watchlist share, internal outlook score); color-coded RAG. Source: aggregates from risk systems.",
+   "vizLabel": "Risk heatmap (sector × metric)",
+   "panels": [
+    {
+     "component": "Heatmap",
+     "variant": "rag"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-43",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "Overdue limits & expired credit reviews",
+   "whatItTells": "Operational credit hygiene.",
+   "method": "Count and exposure of facilities past limit-expiry date and relationships whose annual review is > 12 months old, per RM/team. Source: limit management system review dates.",
+   "vizLabel": "Exception KPI tiles",
+   "panels": [
+    {
+     "component": "KpiCards",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-44",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Risk",
+   "group": "Corporate Risk",
+   "title": "Stress-test impact scenarios",
+   "whatItTells": "What a bad year would do to the book and capital.",
+   "method": "Apply defined shocks (e.g. +200bps rates, sector-specific default spike, FX depreciation): re-estimate PDs → projected NPL formation, ECL and capital consumption per scenario; show delta vs base case. Source: risk models on top of exposure data.",
+   "vizLabel": "Scenario bar / tornado chart",
+   "panels": [
+    {
+     "component": "ScenarioBars",
+     "variant": "scenarios"
+    },
+    {
+     "component": "ScenarioBars",
+     "variant": "tornado"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-45",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Profitability",
+   "group": "Corporate Profitability",
+   "title": "Revenue per relationship",
+   "whatItTells": "Total economic value of each client.",
+   "method": "Per client: FTP-adjusted NII + lending fees + trade commissions + FX income + cash-management fees; monthly and trailing-12 trend. Source: profitability engine / GL mapping.",
+   "vizLabel": "Waterfall / bar",
+   "panels": [
+    {
+     "component": "WaterfallChart",
+     "variant": "plain"
+    },
+    {
+     "component": "BarChart",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": true
+  },
+  {
+   "id": "C-46",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Profitability",
+   "group": "Corporate Profitability",
+   "title": "RAROC by client / sector / RM",
+   "whatItTells": "Risk-adjusted return — the truest profitability lens.",
+   "method": "RAROC = (revenue − funding cost − operating cost allocation − expected loss) / economic capital, where EC ≈ f(PD, LGD, EAD). Report per client, sector, RM. Source: profitability engine + risk parameters.",
+   "vizLabel": "Scatter (risk vs return)",
+   "panels": [
+    {
+     "component": "ScatterPlot",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  },
+  {
+   "id": "C-47",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Profitability",
+   "group": "Corporate Profitability",
+   "title": "Fee-based income share of corporate revenue",
+   "whatItTells": "Quality and stability of the revenue mix.",
+   "method": "Fee share = total non-interest income / total corporate revenue; mix breakdown by fee type (credit fees, trade, cash management, FX). Trend. Source: GL income accounts.",
+   "vizLabel": "Donut + trend",
+   "panels": [
+    {
+     "component": "DonutChart",
+     "variant": "plain"
+    },
+    {
+     "component": "LineChart",
+     "variant": "single"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-48",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Profitability",
+   "group": "Corporate Profitability",
+   "title": "Sector-level P&L contribution",
+   "whatItTells": "Which industries fund the corporate P&L.",
+   "method": "Aggregate client-level contribution by sector; treemap sized by revenue, colored by RAROC. Source: profitability engine.",
+   "vizLabel": "Treemap",
+   "panels": [
+    {
+     "component": "Treemap",
+     "variant": "plain"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "percent",
+   "demoPath": false
+  },
+  {
+   "id": "C-49",
+   "layer": "corporate",
+   "layerLabel": "Corporate Banking",
+   "domain": "Corporate Profitability",
+   "group": "Corporate Profitability",
+   "title": "Unprofitable relationship identification",
+   "whatItTells": "The fix-or-exit list.",
+   "method": "Clients where contribution < 0 or RAROC < hurdle rate; quadrant view: x = revenue, y = RAROC, hurdle line; count and exposure of the unprofitable quadrant. Source: profitability engine.",
+   "vizLabel": "Scatter quadrant / exception table",
+   "panels": [
+    {
+     "component": "ScatterPlot",
+     "variant": "quadrant"
+    },
+    {
+     "component": "DataTable",
+     "variant": "exception"
+    }
+   ],
+   "refresh": "Monthly / Quarterly",
+   "unit": "iqd",
+   "demoPath": false
+  }
+ ]
+}

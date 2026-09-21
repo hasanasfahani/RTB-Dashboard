@@ -1,0 +1,355 @@
+/* ---------------------------------------------------------------------------
+ * The brand faces, self-hosted
+ *
+ * Fira Sans sets headings and figures, Barlow sets text and UI, Tajawal carries Arabic —
+ * which is how rtb.iq is built. All three are SIL OFL. The files come from the
+ * `@fontsource` packages and are resolved by Vite at build time, so nothing is fetched
+ * from anywhere at runtime (PRD §4).
+ *
+ * **Declared here rather than imported**, for three reasons that each cost something:
+ *
+ *   - Fontsource's stylesheets also reference a legacy `.woff` beside every `.woff2`.
+ *     woff2 has been universal since 2016, and those duplicates were 112 KB of files that
+ *     no browser would ever request.
+ *   - Its Arabic stylesheet carries **no `unicode-range`**. Without one the browser cannot
+ *     know the face is Arabic-only, and since Tajawal is named in both stacks it downloaded
+ *     on every page — measured, on a dashboard that is currently all Latin.
+ *   - Only the weights that are actually asked for: Fira Sans 500/600/700 for the heading
+ *     roles, Barlow 400 and 700, which is every weight `font-normal` and `font-bold` resolve
+ *     to. Nothing else is declared, so nothing else can be shipped.
+ *
+ * `vite.config.ts` inlines assets so the demo needs no requests at all; fonts are excluded
+ * from that, and the reason is written there.
+ * ------------------------------------------------------------------------ */
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('@fontsource/fira-sans/files/fira-sans-latin-500-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('@fontsource/fira-sans/files/fira-sans-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('@fontsource/fira-sans/files/fira-sans-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('@fontsource/barlow/files/barlow-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('@fontsource/barlow/files/barlow-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('@fontsource/tajawal/files/tajawal-arabic-400-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('@fontsource/tajawal/files/tajawal-arabic-700-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Arabic readiness (PRD §9): logical properties everywhere, so an RTL pass is a
+       config change. Set `dir="rtl"` here and the layout follows. */
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans text-body;
+  }
+
+  /*
+   * The display face is bound to the type *roles*, not to elements.
+   *
+   * `text-h1` sits on an `h2` in some places and on a `span` in others, and a KPI figure is
+   * not a heading at all. Keying on the role means the face cannot drift from the scale it
+   * belongs to, and there is one place to look.
+   */
+  .text-display,
+  .text-h1,
+  .text-h2,
+  .text-kpi {
+    font-family: theme('fontFamily.display');
+  }
+
+  /*
+   * Lining, fixed-width figures everywhere.
+   *
+   * Financial columns have to align digit-for-digit — proportional numerals make a
+   * table of balances look ragged and are the most common tell of amateur finance UI.
+   * Applied globally rather than per-component so nothing can forget.
+   */
+  body {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+  }
+
+  /* Keyboard focus must be visible — PRD §13 requires tab order to work. */
+  :focus-visible {
+    outline: 2px solid theme('colors.cyan');
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Fade edges for the section tab bar when nine tabs exceed the width (PRD §11.2). */
+  .fade-inline-end {
+    mask-image: linear-gradient(to right, black calc(100% - 32px), transparent 100%);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Print (PRD §12)
+ *
+ * Cards must not break across pages and charts must render on white. The demo is
+ * shown on screen, but a CFO asking for "that page" afterwards should get something
+ * readable rather than a navy band bleeding across the sheet.
+ * ------------------------------------------------------------------------ */
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  body {
+    /* A1: every colour resolves from tokens.ts via the Tailwind theme. */
+    background: theme('colors.surface');
+  }
+
+  /* Chrome, the tab bar, the filter bar and the palette are all navigation. */
+  header nav,
+  [aria-label='Sections'],
+  [role='dialog'],
+  footer {
+    display: none !important;
+  }
+
+  /* Keep the illustrative-data banner. It matters more on paper than on screen. */
+  article,
+  section,
+  figure,
+  table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  article {
+    border: 1px solid theme('colors.line') !important;
+  }
+
+  /* Recharts and the hand-rolled SVGs both need backgrounds forced for print. */
+  .recharts-wrapper,
+  svg {
+    background: theme('colors.surface') !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  /* A hidden tab's content is not on the page the presenter is looking at. */
+  [hidden] {
+    display: none !important;
+  }
+
+  /* Printing never scrolls, so nothing would ever be revealed. */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /*
+   * Chips, on paper.
+   *
+   * A chip's shape is a CSS background, and browsers drop backgrounds when printing unless
+   * the reader ticks "Background graphics" — which is off by default. A scope chip is
+   * `bg-navy text-surface`, so it prints as **white text on white paper**: the one mark on
+   * the card that says "this panel is not reading what the header says" disappears at the
+   * moment the document leaves the room.
+   *
+   * So print does not rely on a background at all. Border and ink instead, which survive
+   * whatever the reader's print dialog is set to.
+   */
+  [data-chip] {
+    background: transparent !important;
+    border: 1px solid theme('colors.muted') !important;
+    color: theme('colors.ink') !important;
+  }
+
+  /* The admission that a filter did not apply. Struck through, and never filled. */
+  [data-chip='ignored'] {
+    color: theme('colors.muted') !important;
+    text-decoration: line-through !important;
+  }
+
+  /*
+   * A disclosure's summary is an invitation to click, and there is nothing to click on paper.
+   * The content stays hidden — two paragraphs of guidance on each of 54 cards would bury the
+   * report. The one line that must not be lost is promoted separately, in `InsightBody`.
+   */
+  details > summary {
+    display: none !important;
+  }
+
+  /* The report name prints as a heading, not as a button with a pencil beside it. */
+  [title='Rename this report'] svg {
+    display: none !important;
+  }
+
+  /*
+   * The insights panel does not print.
+   *
+   * It is `position: fixed`, so a printed copy lands on the first page on top of whatever
+   * is there — which is worse than its absence. Printing it beside its card instead would
+   * mean rendering a second copy inside every card, and every card would then have to
+   * subscribe to a context that ticks sixteen times a second while the bar moves. The
+   * reading is on screen, the chart is on paper; see plan §2.27.
+   */
+  .insights-panel {
+    display: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Motion
+ *
+ * One moment only: the Executive page's arrival. Charts never animate — see
+ * `design/motion.ts` for why a transition on filter change was built and rejected.
+ * ------------------------------------------------------------------------ */
+@layer utilities {
+  /*
+   * Card reveal on scroll. The motion is on the card, never on the chart's marks, so a
+   * gauge and a line chart enter identically — which is the only way to have chart
+   * motion at all across 23 component types.
+   */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  /*
+   * 750ms on a near-symmetric curve, not 520ms on a fast-out one.
+   *
+   * `cubic-bezier(0.16, 0.8, 0.28, 1)` completes 67% of its movement in the first 20%
+   * of its duration — about 104ms. By the time a card scrolled into reading position
+   * there was nothing left to watch, which is exactly how it was reported: "catching the
+   * last millisecond". This curve is at 16% after a fifth and 74% at the halfway point,
+   * so the movement is spread across the time it actually takes.
+   */
+  .reveal-in {
+    animation: reveal 750ms cubic-bezier(0.33, 0, 0.3, 1) both;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /*
+   * The progress bar's fill.
+   *
+   * A transition rather than an animation, which is the distinction §2.18 turns on: the
+   * width is driven by real state, and this only smooths the step between two values. The
+   * interval that moves it is 60ms, so the transition is matched to it — any longer and the
+   * bar lags its own stage label.
+   */
+  .insights-bar {
+    transition: width 60ms linear;
+  }
+
+  /* The Executive arrival — once per session, on the number and the claim above it. */
+  .arrive {
+    animation: arrive 700ms cubic-bezier(0.33, 0, 0.3, 1) both;
+  }
+
+  .arrive-delayed {
+    animation: arrive 700ms cubic-bezier(0.33, 0, 0.3, 1) 200ms both;
+  }
+
+  @keyframes arrive {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* A presenter who has asked the OS for less motion gets none of it. */
+@media (prefers-reduced-motion: reduce) {
+  .arrive,
+  .arrive-delayed,
+  .reveal-in {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* The bar still fills — it is information — but it steps rather than glides. */
+  .insights-bar {
+    transition: none !important;
+  }
+
+  /* Belt and braces: a card must never be left transparent when motion is off. */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
